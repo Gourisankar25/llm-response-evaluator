@@ -22,8 +22,6 @@ A production-ready system for evaluating LLM responses across 5 key metrics: hal
 - **Frontend**: Streamlit
 - **Database**: SQLite (can upgrade to SQL Server)
 - **ML/NLP**: HuggingFace Transformers, SentenceTransformers
-- **Testing**: pytest
-- **CI/CD**: GitHub Actions
 
 ## 🚀 Quick Start
 
@@ -87,16 +85,6 @@ LLM_eval/
 ├── .env
 ├── .gitignore
 └── README.md
-```
-
-## 🧪 Testing
-
-```bash
-# Run all tests
-pytest
-
-# Run with coverage
-pytest --cov=evaluators --cov=app
 ```
 
 ## 📚 How It Works
