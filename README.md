@@ -14,8 +14,8 @@ A production-ready system for evaluating LLM responses across 5 key metrics: hal
 ![Home Page](screenshots/HomePage.png)
 
 ### Example 1: High-Quality Response (Good Results)
-![Example 1 - Result Page](screenshots/ResultPage.png)
-![Example 1 - Metrics Breakdown](screenshots/Metric%20Page.png)
+![Example 1 - Result Page](screenshots/example_1%20result%20page.png)
+![Example 1 - Metrics Breakdown](screenshots/example%201%20metrics.png)
 
 ### Example 2: Poor Response with Issues
 ![Example 2 - Result Page](screenshots/example%202%20result%20page.png)
