@@ -8,7 +8,20 @@
 
 A production-ready system for evaluating LLM responses across 5 key metrics: hallucination detection, groundedness, faithfulness, context relevance, and answer completeness.
 
-## 📊 Evaluation Metrics
+## � Screenshots
+
+### Dashboard Home Page
+![Home Page](screenshots/HomePage.png)
+
+### Example 1: High-Quality Response (Good Results)
+![Example 1 - Result Page](screenshots/ResultPage.png)
+![Example 1 - Metrics Breakdown](screenshots/Metric%20Page.png)
+
+### Example 2: Poor Response with Issues
+![Example 2 - Result Page](screenshots/example%202%20result%20page.png)
+![Example 2 - Metrics Breakdown](screenshots/example_2_metrics_page.png)
+
+## �📊 Evaluation Metrics
 
 1. **Hallucination Detection** - Detects contradictions and fabricated information using NLI models
 2. **Groundedness Score** - Measures % of claims supported by source context
