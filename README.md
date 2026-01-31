@@ -33,8 +33,7 @@ A production-ready system for evaluating LLM responses across 5 key metrics: hal
 
 - **Backend**: FastAPI
 - **Frontend**: Streamlit
-- **Database**: SQLite (can upgrade to SQL Server)
-- **ML/NLP**: HuggingFace Transformers, SentenceTransformers
+- **ML/NLP**: HuggingFace Transformers, SentenceTransformers, spaCy
 
 ## 🚀 Quick Start
 
@@ -45,13 +44,17 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
-### 2. Set Up Environment
+### 2. Set Up Environment (Optional)
 
-Create a `.env` file:
+Create a `.env` file to customize settings:
 ```
-DATABASE_URL=sqlite:///./llm_eval.db
 MODEL_CACHE_DIR=./models
 LOG_LEVEL=INFO
+HALLUCINATION_THRESHOLD=0.5
+GROUNDEDNESS_THRESHOLD=0.7
+FAITHFULNESS_THRESHOLD=0.6
+RELEVANCE_THRESHOLD=0.5
+COMPLETENESS_THRESHOLD=0.7
 ```
 
 ### 3. Run the API
@@ -76,11 +79,9 @@ Dashboard will open at: http://localhost:8501
 ```
 LLM_eval/
 ├── app/
-│   ├── main.py              # FastAPI app
-│   ├── models.py            # Pydantic models
-│   ├── database.py          # Database setup
-│   └── routers/
-│       └── evaluation.py    # Evaluation endpoints
+│   ├── main.py              # FastAPI application
+│   ├── models.py            # Pydantic data models
+│   └── __init__.py
 ├── evaluators/
 │   ├── __init__.py
 │   ├── hallucination.py     # Hallucination detector
@@ -91,11 +92,10 @@ LLM_eval/
 │   └── pipeline.py          # Main evaluation pipeline
 ├── dashboard/
 │   └── app.py               # Streamlit dashboard
-├── tests/
-│   ├── test_evaluators.py
-│   └── test_api.py
-├── requirements.txt
-├── .env
+├── screenshots/             # Dashboard screenshots
+├── examples.py              # Usage examples
+├── requirements.txt         # Python dependencies
+├── .env                     # Environment configuration
 ├── .gitignore
 └── README.md
 ```
@@ -140,19 +140,24 @@ response = requests.post("http://localhost:8000/api/evaluate", json={
 print(response.json())
 ```
 
-## 📈 Roadmap
+## 📈 Current Status & Future Enhancements
 
-- [x] Phase 1: Core evaluation engine
-- [x] Phase 2: FastAPI integration
-- [x] Phase 3: SQLite database
-- [x] Phase 4: Streamlit dashboard
-- [ ] Phase 5: Advanced caching
-- [ ] Phase 6: SQL Server migration
-- [ ] Phase 7: Docker containerization
+**✅ Implemented:**
+- Core evaluation engine with 5 metrics
+- FastAPI REST API with auto-generated docs
+- Interactive Streamlit dashboard
+- Comprehensive logging and error handling
+- Example scripts for direct usage
 
-## 🤝 Contributing
+**🚧 Future Enhancements:**
+- Database integration for evaluation history
+- Advanced caching for model predictions
+- Batch evaluation endpoints
+- Comparison reports across multiple responses
+- SQL Server migration for production
+- Docker containerization
+- Performance optimization
 
-This is a learning project! Feel free to experiment and improve.
 
 ## 📝 License
 
